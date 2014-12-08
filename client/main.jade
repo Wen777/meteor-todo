@@ -1,0 +1,21 @@
+
+head
+  title
+    Meteor Todo list
+
+body
+  +main
+
+template(name="main")
+  #content.container
+    .span6.offset3
+      fieldset
+        legend ToDo App
+        input#input-todo(type="text", placeholder="What needs to be done?…")
+        input#add-todo.btn.btn-primary(type="button", value="Add")
+        ul.todo-list
+          each todosList
+            li.todo
+              input.todo-done(type="checkbox", {{checkedstate}}="")
+              | {{title}}
+              input.btn.btn-mini.delete-todo(type="button", value="Delete")
