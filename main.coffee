@@ -34,7 +34,7 @@ if Meteor.isClient
             console.log err
 
 
-    'click .delet-todo': (e, t)->
+    'click .btn.btn-mini.delete-todo': (e, t)->
       Todos.remove @_id
 
     'change .todo-done': (e, t) ->
@@ -44,12 +44,10 @@ if Meteor.isClient
       ,
         $set:
           isDone: isDone
-
+      console.log("@_id" + @_id + "isDone " + isDone)
   Template.main.helpers
     todosList: Todos.find()
-    checkedstate: (if @isDone then "checked" else "")
-
-  # Template.main.helpers
-  #   # checkedstate: (if @isDone then "checked" else "")
-  #   todosList = Todos.find
-  #   console.log(Todos.find())
+    # for i in Todos.find()
+    #   console.log(i.title)
+    #   if i.isDone == true
+    #     i.checked= "checked"
