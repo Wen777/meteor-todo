@@ -7,3 +7,10 @@ meteor-platform
 mquandalle:jade
 bootstrap
 coffeescript
+accounts-ui
+accounts-meetup
+accounts-twitter
+accounts-github
+mondora:connect-with
+accounts-facebook
+

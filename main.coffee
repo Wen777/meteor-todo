@@ -44,10 +44,30 @@ if Meteor.isClient
       ,
         $set:
           isDone: isDone
-      console.log("@_id" + @_id + "isDone " + isDone)
+      # console.log("@_id" + @_id + "isDone " + isDone)
   Template.main.helpers
     todosList: Todos.find()
-    # for i in Todos.find()
-    #   console.log(i.title)
-    #   if i.isDone == true
-    #     i.checked= "checked"
+    # todo: Todos.find()
+    # for i in todo
+    #   if i.isDone is null
+    #     List.concat([i])
+    #   else
+    #     ListDone.concat([i])
+    # todosList:List
+    # todosListDone:ListDone
+
+  Template.accountbid.events
+    "click input.btn.connect": (e,t) ->
+      console.log "click button"
+      if Meteor.user()
+        Meteor.connectWith("github")
+
+    "click input.btn.connect.twitter": (e,t) ->
+      console.log "click twitter button"
+      if Meteor.user()
+        Meteor.connectWith("twitter")
+
+    "click input.btn.connect.facebook": (e,t) ->
+      console.log "click facebook button"
+      if Meteor.user()
+        Meteor.connectWith("facebook")

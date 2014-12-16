@@ -4,7 +4,10 @@ head
     Meteor Todo list
 
 body
+  +navbar
   +main
+  hr
+  +accountbid
 
 template(name="main")
   #content.container
@@ -16,6 +19,21 @@ template(name="main")
         ul.todo-list
           each todosList
             li.todo
-              input.todo-done(type="checkbox")
+              input.todo-check(type="checkbox")
               | {{title}}
               input.btn.btn-mini.delete-todo(type="button", value="Delete")
+
+          //- each todosListDone
+          //-   li.todo
+          //-     input.todo-check(type="checkbox")
+          //-     | {{title}}
+          //-     input.btn.btn-mini.delete-todo(type="button", value="Delete")
+template(name="navbar")
+  .container
+    +loginButtons
+
+
+template(name="accountbid")
+  input.btn.connect.git(type="button", value="connect github")
+  input.btn.connect.twitter(type="button", value="connect twitter")
+  input.btn.connect.facebook(type="button", value="connect facebook")
